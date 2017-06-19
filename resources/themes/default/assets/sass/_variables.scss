@@ -1,0 +1,25 @@
+/**
+** VARIABLES
+**/
+
+/** PATHS **/
+$theme_path : "/theme/default";
+$media_path : "#{$theme_path}/media";
+$image_path : "#{$media_path}/images";
+$text-icon_path: "#{$image_path}/text-icon";
+
+/** FONTS **/
+$primary-font: "Arial";
+
+/** MEDIA BREAKPOINTS **/
+$md: 1199px;
+$sm: 991px;
+$xs: 767px;
+$mobile: 580px;
+$iphone: 480px;
+
+/** COLORS **/
+$color-1: #333;
+$color-2: #fff;
+$color-3: #00bcd4;
+

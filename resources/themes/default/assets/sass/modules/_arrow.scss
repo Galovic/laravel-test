@@ -1,0 +1,60 @@
+/**
+** ARROWS
+**/
+
+/** ARROW BEFORE/AFTER TEXT **/
+/** The extension arrow class is an assistant class which expands the arrow sub-classes to-left and to-right.
+    To-left/to-right = position of arrow due to text.
+    Show-* = direction of arrow. **/
+
+.extension-arrow {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  position: relative;
+  top: -2.5px;
+  vertical-align: middle;
+  border-right: 1px solid $color-2;
+  border-top: 1px solid $color-2;
+}
+
+.arrow {
+  display: inline-block;
+  &.to-left {
+    &::before {
+      @extend .extension-arrow;
+      margin-right: 5px;
+    }
+  }
+  &.to-right {
+    &::after {
+      @extend .extension-arrow;
+      margin-left: 5px;
+    }
+  }
+  &.show-top {
+    &::before,
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  &.show-right {
+    &::before,
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+  &.show-down {
+    &::before,
+    &::after {
+      transform: rotate(135deg);
+    }
+  }
+  &.show-left {
+    &::before,
+    &::after {
+      transform: rotate(-135deg);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "name": "FormsPlugin",
+    "alias": "formsplugin",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\FormsPlugin\\Providers\\FormsPluginServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

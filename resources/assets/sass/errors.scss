@@ -1,0 +1,150 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,700&subset=latin,latin-ext);
+
+html, body {
+  margin: 0;
+  padding: 0;
+
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #90cec4;
+  font-family: 'Roboto', Helvetica, sans-serif !important;
+  line-height: 21px;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+
+/*Opera Fix*/
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;
+}
+
+a {
+  color: #f4d9af;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #f1c581;
+  text-decoration: underline;
+}
+
+img {
+  border: 0;
+}
+
+.clear {
+  clear: both;
+  float: none;
+}
+
+.center {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.main a {
+  color: #bb1515;
+}
+
+.main a:hover {
+  color: red;
+}
+
+#wrap {
+  min-height: 100%;
+  min-width: 980px;
+}
+
+#main-container {
+  overflow: auto;
+  padding-bottom: 444px;
+  min-height: 537px;
+  background: url('../images/slider-background2.jpg') top center repeat-x;
+}
+
+input,select,textarea {
+  font-family: 'Roboto', Helvetica, sans-serif !important;
+  color: #636e7b;
+}
+
+a:focus, a:active { outline: none; }
+
+h1,h2,h3,h4,h5 {
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: 'Roboto', Helvetica, sans-serif !important;
+  font-size: 50px;
+  font-weight: normal;
+  color: #bb1515;
+  padding-top: 15px;
+}
+
+strong {
+  font-family: 'Roboto';
+  font-weight: 700;
+}
+
+.notfoundpanel {
+  background: url('/media/images/404.png') top left no-repeat;
+  padding-left: 350px;
+  width: 450px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+h1 {
+  font-weight: 100;
+  font-size: 120px;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  color: #4c8eae;
+}
+h3 {
+  font-weight: 100;
+  font-size: 50px;
+  line-height: 100%;
+  color: #4C8EAE;
+  margin-bottom: 0px;
+}
+h3 span {
+  color: #ffffff;
+}
+h4 {
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 100%;
+  color: #ffffff;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.btn-back {
+  background: #ffffff;
+  color: #4c8eae;
+  font-weight: 300;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  display: inline-block;
+}
+.btn-back:hover {
+  background: #4c8eae;
+  color: #ffffff;
+  text-decoration: none;
+}

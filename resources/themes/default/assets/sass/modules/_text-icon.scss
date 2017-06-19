@@ -1,0 +1,101 @@
+/**
+** SVG TEXT-ICON
+**/
+
+
+/**
+1. make a class for your icon in the section TYPES OF ICON
+2. use mixin text-icon-creator with 4 param.
+3. (optional) in the new class use position
+**/
+
+/**
+** TEXT-ICON CREATOR
+**/
+/*  width, height = size of bg image - with units [px];
+    name = "name of file" (in quotes);
+    type = "left" or "right" float (in quotes);
+    hover = "yes" or "no" - if the bg image is changing during the hover action
+    quotes are important!;
+    relative/abs. position have to be declared independently in TYPE OF ICON - by top/right/bottom/left position */
+
+@mixin text-icon-creator ($width, $height, $name, $type, $hover) {
+  &::before {
+    width: $width;
+    height: $height;
+    @if $type == "right" {
+      position: absolute;
+      right: (-$width)-($width/2);
+      top: auto;
+      float: none;
+    }
+    background: url(#{$text-icon_path}/#{$name}.png) no-repeat top left / $width $height;
+    background: url(#{$text-icon_path}/#{$name}.svg) no-repeat top left / $width $height;
+  }
+  &::after {
+    width: $width;
+    height: $height;
+    @if $type == "right" {
+      position: absolute;
+      right: (-$width)-($width/2);
+      top: auto;
+      float: none;
+    }
+    @if $type == "left" { margin: 0 (($width)/2-2px) 0 (-$width); }
+    @if $hover == "no" {
+      background: url(#{$text-icon_path}/#{$name}.png) no-repeat top left / $width $height;
+      background: url(#{$text-icon_path}/#{$name}.svg) no-repeat top left / $width $height;
+    } @else {
+      background: url(#{$text-icon_path}/#{$name}-hover.png) no-repeat top left / $width $height;
+      background: url(#{$text-icon_path}/#{$name}-hover.svg) no-repeat top left / $width $height;
+    }
+  }
+}
+
+/**
+** MAIN CLASS .TEXT-ICON
+**/
+
+.text-icon {
+  display: inline-block;
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    float: left;
+    transition: 0.25s opacity;
+  }
+  &::before {
+    opacity: 1;
+  }
+  &::after {
+    opacity: 0;
+  }
+  &:hover {
+    &::before {
+      opacity: 0;
+    }
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  /**
+  ** TYPES OF ICONS
+  **/
+  &.telephone {
+    @include text-icon-creator(16px, 17px, "telephone", "left", "yes");
+  }
+  &.e-mail {
+    @include text-icon-creator(16px, 12px, "e-mail", "left", "yes");
+    &::before,
+    &::after {
+      top: 2px;
+    }
+  }
+  &.cs {
+    @include text-icon-creator(22px, 15px, "cs", "left", "no");
+  }
+}

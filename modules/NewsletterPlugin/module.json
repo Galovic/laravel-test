@@ -1,0 +1,16 @@
+{
+    "name": "NewsletterPlugin",
+    "alias": "newsletterplugin",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\NewsletterPlugin\\Providers\\NewsletterPluginServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

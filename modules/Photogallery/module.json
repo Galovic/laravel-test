@@ -1,0 +1,16 @@
+{
+    "name": "Photogallery",
+    "alias": "photogallery",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Photogallery\\Providers\\PhotogalleryServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

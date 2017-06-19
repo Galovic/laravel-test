@@ -1,0 +1,29 @@
+/**
+** DEFAULT STYLESHEET
+**/
+
+body {
+  font-family: $primary-font;
+}
+
+// HEADER
+header {
+  @media (max-width: $xs) {
+    position: relative;
+    height: 100vh;
+  }
+  #hp-header {
+    position: relative;
+    height: 100%;
+  }
+}
+
+// PAGINATION
+.pagination {
+  border-radius: 0;
+  > li:first-child > a,
+  > li:first-child > span {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+}

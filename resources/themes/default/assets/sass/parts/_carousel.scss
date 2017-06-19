@@ -1,0 +1,19 @@
+/**
+** CAROUSEL
+**/
+
+#hp-carousel {
+  height: 450px;
+  @media (max-width: $xs) {
+    height: calc(100% - 36px); //36px = default height of top-bar
+  }
+  .carousel-inner {
+    height: 100%;
+    .item {
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+}

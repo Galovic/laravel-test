@@ -1,0 +1,16 @@
+{
+    "name": "Reference",
+    "alias": "reference",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Reference\\Providers\\ReferenceServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

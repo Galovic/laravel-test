@@ -1,0 +1,31 @@
+/**
+*** STYLES
+**/
+
+/* SASS MAGIC */
+@import "variables";
+
+/* BOOTSTRAP v3.3.7 */
+@import "bootstrap/bootstrap";
+
+/* PHOTOSWIPE v4.1.1 - lightbox */
+@import "photoswipe/photoswipe";
+@import "photoswipe/default-skin";
+@import "photoswipe/_simplo-skin.scss";
+
+/* JCAROUSEL */
+@import "jcarousel/jcarousel.scss";
+
+/* DEFAULT STYLESHEET */
+@import "default";
+
+/* SASS MODULES */
+@import "modules/text-icon";
+@import "modules/arrow";
+@import "modules/forms";
+
+/* PARTS */
+@import "parts/topbar";
+@import "parts/navbar";
+@import "parts/carousel";
+@import "parts/footer";

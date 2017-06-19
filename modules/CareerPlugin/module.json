@@ -1,0 +1,16 @@
+{
+    "name": "CareerPlugin",
+    "alias": "careerplugin",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\CareerPlugin\\Providers\\CareerPluginServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

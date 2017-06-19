@@ -1,0 +1,160 @@
+/**
+** NAVBAR
+**/
+
+/* Default styles is made by class .navbar and its subclasses.
+It's recommended to use mixins for set basic styles.
+If you want navbar place into the carousel you can use extension navbar-in-carousel.
+Mobile navbar is edited on the end of this document. */
+
+/** SASS MAGIC **/
+/* Expandig Class for navbar in carousel */
+.navbar-in-carousel {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+/* Default set of navbar links */
+@mixin navbar-links ($padding, $font-size, $color, $color-hover) {
+  a {
+    padding: $padding;
+    font-size: $font-size;
+    line-height: 1;
+    color: $color;
+    transition: 0.25s color;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-hover;
+    }
+  }
+}
+/* Add hover effect to navbar links - border effect */
+@mixin navbar-links-with-border-hover-effect ($border-width, $border-color, $border-position-due-to-text) {
+  a {
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      width: 0;
+      height: $border-width;
+      top: $border-position-due-to-text;
+      background-color: $border-color;
+      margin: auto;
+      transition: 0.25s width;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/** STYLES **/
+.navbar {
+  min-height: initial;
+  margin: 0;
+  @extend .navbar-in-carousel;
+  &.navbar-default {
+    background-color: rgba(0,188,212,0.5);
+    border: 0;
+    border-radius: 0;
+    @media (max-width: $xs) {
+      background-color: transparent;
+    }
+    .navbar-brand {
+      color: $color-1;
+    }
+    .navbar-toggle {
+      padding: 10px;
+      border: 0;
+      border-radius: 0;
+      background-color: $color-1;
+      .icon-bar {
+        background-color: $color-2;
+      }
+    }
+  }
+  .navbar-header {
+    @media (max-width: $xs) {
+      background-color: rgba(0,188,212,0.5);
+    }
+  }
+  #navbar-menu {
+    @media (max-width: $sm) {
+      height: 100%;
+      text-align: center;
+    }
+    @media (max-width: $xs) {
+      background-color: $color-3;
+    }
+    .navbar-right {
+      @media (max-width: $sm) {
+        display: inline-block;
+        float: none !important;
+        margin-right: 0;
+        margin-left: 0;
+      }
+      > li {
+        &:last-of-type {
+          a {
+            padding-right: 0;
+          }
+        }
+        @include navbar-links(30px 15px, 1.286em, $color-2, $color-1);
+        @include navbar-links-with-border-hover-effect(2px, $color-1, 5px);
+        @media (max-width: $md) {
+          @include navbar-links(30px 10px, 1.286em, $color-2, $color-1);
+        }
+        @media (max-width: $sm) {
+          a {
+            font-size: 1em;
+          }
+        }
+        @media (max-width: $xs) {
+          a {
+            padding: 15px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/** Navbar-toggle open effect for devices < 767px **/
+.navbar {
+  @media (max-width: $xs) {
+    height: calc(100% - 36px);
+    overflow: hidden;
+    > .container {
+      height: 100%;
+    }
+  }
+  &.navbar-default {
+    .navbar-toggle {
+      transition: 0.5s background-color;
+      .icon-bar {
+        transition: 0.5s transform;
+      }
+      &:not(.collapsed) {
+        padding: 20px 10px;
+        background-color: $color-3;
+        .icon-bar {
+          &:nth-of-type(2) {
+            transform: rotate(-45deg);
+          }
+          &:nth-of-type(3) {
+            display: none;
+          }
+          &:nth-of-type(4) {
+            margin-top: -2px;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    #Redirect from old-pages to new-pages
+    Redirect 301 /oldfile.htm /newfile.htm
+    Redirect 301 /certifikaty /cs/certifikaty
+    Redirect 301 /programy-eu-a-mpo /cs/programy-eu-mpo
+    Redirect 301 /kariera /cs/kariera
+    Redirect 301 /kvalita-ems /cs/rizeni-kvality-a-enviroment
+    Redirect 301 /pro-akcionare /cs/pro-akcionare
+    Redirect 301 /o-nas /cs/profil-spolecnosti
+    Redirect 301 /slevarna /cs/slevarna
+    Redirect 301 /kovarna /cs/kovarna
+    Redirect 301 /cnc-obrabeni /cs/cnc-obrabeni
+    Redirect 301 /naradjovna /cs/naradovna
+    Redirect 301 /kontakty /cs/kontakty
+    Redirect 301 /aktuality /cs/aktuality
+    Redirect 301 /aktuality/pozvanka-na-hannover-messe-2017/76 /cs/articles/aktuality/pozvanka-na-veletrh-hannover-mesee-2017
+    Redirect 301 /aktuality/pozvanka-na-veletrh-euroguss-2018/75 /cs/articles/aktuality/pozvanka-na-veletrh-euroguss-2018
+    Redirect 301 /kariera/kovar /cs/kariera/kovar
+    Redirect 301 /kariera/slevarensky-delnik/delnice-v-povrchove-uprave /cs/kariera/slevarensky-delnik-delnice-v-povrchove-upravu
+    Redirect 301 /kariera/operator/operatorka-na-licich-strojich-odlevac/odlevacka /cs/kariera/operator-operatorka-na-licich-strojich-odlevac-odlevaaka
+    Redirect 301 /kariera/operatorka/operator-na-cnc-obrabecich-centrech /cs/kariera/operator-operatorka-na-cnc-obrabecich-centrech
+    Redirect 301 /kariera/frezar /cs/kariera/frezar
+    Redirect 301 /kariera/nastrojar /cs/kariera/nastrojar
+    Redirect 301 /kariera/cnc-soustruznik /cs/kariera/cnc-soustruznik
+    Redirect 301 /kariera/strojirensky-delnik-v-kovarne /cs/kariera/strojirensky-delnik-v-kovarne
+    Redirect 301 /kariera/ridic/ridicka-vysokozdvizneho-voziku /cs/kariera/ridic-ridicka-vysokozdvizneho-voziku
+    Redirect 301 /kariera/servisni-technik-pro-strojni-zarizeni-provozni-elektrikar /cs/kariera/servisni-technik-pro-strojni-zarizeni-provozni-elektrikar
+    Redirect 301 /kariera/servisni-technik-pro-strojni-zarizeni-provozni-zamecnik /cs/kariera/servisni-technik-pro-strojni-zarizeni-provozni-zamecnik
+    Redirect 301 /kariera/technolog-cnc-obrabeni-pro-automotive /cs/kariera/technolog-pro-cnc-obrabeni-pro-automotive
+    Redirect 301 /kariera/smenovy-mistr-cnc-obrabeni /cs/kariera/smenovy-mistr-cnc-obrabeni
+    Redirect 301 /kariera/technolog-cnc-obrabeni /cs/kariera/technolog-cnc-obrabeni
+    Redirect 301 /kariera/kontrolor-kvality-ve-vyrobe /cs/kariera/kontrolor-kvality-ve-vyrobe
+    Redirect 301 /uploads/home/cz_01.doc /theme/kovolit/media/files/politika-jakosti-a-environmentu.doc
+    Redirect 301 /uploads/home/KOV%20ekologie%20www.doc /cs/rizeni-kvality-a-enviroment
+    Redirect 301 /aktuality/pozvanka-na-veletrh-hannover-messe/73 /cs/articles/aktuality/pozvanka-na-veletrh-hannover-mesee-2017
+    Redirect 301 /aktuality/pozvanka-na-veletrh-euroguss-2018/68 /cs/articles/aktuality/pozvanka-na-veletrh-euroguss-2018
+    Redirect 301 /uploads/home/slevarna.pdf /cs/slevarna
+    Redirect 301 /aktuality/oslavy-95-vyroci-zalozeni-kovolitu/74 /cs/aktuality
+    Redirect 301 /aktuality/pozvanka-na-veletrh-automotive-hungary-2015/67 /cs/aktuality
+    Redirect 301 /aktuality/16-2062015-messe-dusseldorf-germany/63 /cs/aktuality
+    #Preformed old-pages for redirect (till new-pages'll be create)
+        #/pro-zamestanance
+        #/de
+        #/en/pro-zamestnance
+        #/en/cerifikates
+        #/en/quality-ems
+        #/en/profile
+        #/en/foundry
+        #/en/forge
+        #/en/cnc-machining
+        #/en/tool-shop
+        #/en/contacts
+        #/en/news/invitation-to-visit-hannover-messe-2017/78
+        #/en/news/invitation-to-visit-euroguss-2018/77
+        #/en/news/invitation-to-visit-euroguss-2016/70
+        #/de/pro-zamestnance
+        #/de/
+        #/de/zertifikat
+        #/de/qualitatsmanagement-ems
+        #/de/firmenprofil
+        #/de/giesserei
+        #/de/schmiede
+        #/de/cnc-bearbeitung
+        #/de/werkzeugbau
+        #/de/kontakt
+        #/de/neuigkeiten/einladung-zur-hannover-messe-2017/80
+        #/de/neuigkeiten/einladung-zur-euroguss-2018/79
+        #/de/neuigkeiten/einladung-zur-euroguss-2016-besuchen/72
+</IfModule>

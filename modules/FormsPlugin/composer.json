@@ -1,0 +1,15 @@
+{
+    "name": "admin-module/formsplugin",
+    "description": "",
+    "authors": [
+        {
+            "name": "Simplo.cz",
+            "email": "info@simplo.cz"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Modules\\FormsPlugin\\": ""
+        }
+    }
+}

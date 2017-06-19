@@ -1,0 +1,147 @@
+/** PHOTOSWIPE GALLERY **/
+
+// number of photos per row is set by percentage in flex property of element figure
+
+// set default properties:
+$photo-height: 180px;
+$gallery-hover-color: rgba(0,0,0,0.5);
+$photo-hover-color: rgba(255,255,255,0.5);
+
+// other settings are in _settings in this folder
+
+.my-gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 30px 0;
+  &:hover {
+    figure {
+      a:not(:hover) {
+        &::before {
+          opacity: 1;
+          background: $gallery-hover-color;
+        }
+      }
+    }
+  }
+  figure {
+    flex: 25%;
+    @media (max-width: $sm) {
+      flex: 33.3333%;
+    }
+    @media (max-width: $mobile) {
+      flex: 50%;
+    }
+    @media (max-width: $iphone) {
+      flex: 100%;
+    }
+    a {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      padding-bottom: $photo-height;
+      border-right: 5px solid transparent;
+      overflow: hidden;
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: transparent;
+        opacity: 0;
+        z-index: 1;
+        transition: 0.5s opacity;
+      }
+      // hover image's property
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        top: -10px;
+        left: calc(50% - 24px);
+        background: url("#{$image_path}/layout/find.png") no-repeat center center / 48px 48px;
+        background: url("#{$image_path}/layout/find.svg") no-repeat center center / 48px 48px;
+        opacity: 0;
+        z-index: 2;
+        transition: top 0.5s;
+      }
+      &:hover {
+        &::before {
+          background: $photo-hover-color;
+          opacity: 1;
+        }
+        &::after {
+          top: calc(50% - 24px);
+          opacity: 1;
+          animation: pulse 2s infinite 0.7s;
+        }
+      }
+      img {
+        display: inline-block;
+        width: 150%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -25%;
+        right: 0;
+        margin: auto;
+        @media (max-width: $xs) {
+          width: 200%;
+          left: -50%;
+        }
+      }
+    }
+    &:last-of-type {
+      a {
+        border-right: none;
+      }
+    }
+    @media (max-width: $iphone) {
+      &:nth-of-type(1n) {
+        a {
+          border-right: none;
+        }
+      }
+    }
+    @media (min-width: $iphone + 1px) and (max-width: $mobile) {
+      &:nth-of-type(2n) {
+        a {
+          border-right: none;
+        }
+      }
+    }
+    @media (min-width: $mobile + 1px) and (max-width: $sm) {
+      &:nth-of-type(3n) {
+        a {
+          border-right: none;
+        }
+      }
+    }
+    @media (min-width: $sm + 1px) {
+      &:nth-of-type(4n) {
+        a {
+          border-right: none;
+        }
+      }
+    }
+  }
+  figcaption {
+    display: none;
+  }
+}
+
+// thumb effect pulse
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}

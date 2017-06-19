@@ -1,0 +1,55 @@
+/**
+  * FORMS **********
+**/
+
+// this styles rewrite Bootstrap forms
+// don't forget to work with variables (first of all) :-)
+
+$color: $color-1;
+$inverse-color: $color-2;
+
+.form-control {
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 1em;
+  line-height: 1.2;
+  color: $color;
+  background-color: $inverse-color;
+  border-radius: 0;
+  box-shadow: none;
+  transition: all 0.25s;
+  &:focus {
+    border-color: $color;
+    color: $inverse-color;
+    background-color: $color;
+    box-shadow: none;
+    &::-webkit-input-placeholder {
+      color: $inverse-color;
+    }
+    &::-moz-placeholder {
+      color: $inverse-color;
+    }
+    &:-ms-input-placeholder {
+      color: $inverse-color;
+    }
+    &:-moz-placeholder {
+      color: $inverse-color;
+    }
+  }
+}
+
+// button's large can be change by Bootstrap CSS classes: .btn-xs, .btn-sm, btn-lg (medium large is default)
+.btn {
+  color: $inverse-color;
+  background-color: $color;
+  border-color: $color;
+  border-radius: 0;
+  transition: all 0.5s;
+  &:active,
+  &:focus,
+  &:hover {
+    color: $color;
+    background-color: $inverse-color;
+    outline: none;
+  }
+}
